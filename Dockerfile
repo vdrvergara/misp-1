@@ -24,7 +24,7 @@ RUN --mount=type=tmpfs,target=/tmp \
 # Build jobber, that is not released for arm64 arch
 FROM builder as jobber-build
 COPY bin/misp_compile_jobber.sh /build/
-RUN --mount=type=tmpfs,target=/tmp bash /build/misp_compile_jobber.sh
+RUN bash /build/misp_compile_jobber.sh
 
 # MISP image
 FROM base as misp
